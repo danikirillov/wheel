@@ -24,19 +24,18 @@ public class Car {
 
   boolean isAnyWheelFlat() {
     for (int i = 0; i < wheels.length; i++) {
-      if (wheels[i].isFlat() == true) {
+      if (wheels[i].isFlat()) {
         System.out.println("Some wheel is flat!");
         return true;
       }
 
     }
-    System.out.println("All wheels are fine.");
     return false;
   }
 
   private boolean isRadiusCorrect(Wheel wheelForReplacement) {
     for (int i = 0; i < wheels.length; i++) {
-      if (wheels[i].getRadius() == wheelForReplacement.getRadius()) {
+      if (wheels[0].getRadius() == wheelForReplacement.getRadius()) {
         System.out.println("Radius is Ok");
         return true;
       }
@@ -49,10 +48,10 @@ public class Car {
 
   private void changeWheel(Wheel wheelForReplacement) {
     for (int i = 0; i < wheels.length; i++) {
-      if (wheels[i].isFlat() == true &&
-          wheels[i].getRadius() == wheelForReplacement.getRadius()) {
-        wheels[i].setFlat(false);
+      if (wheels[0] != null) {
         System.out.println("Wheel changed");
+        break;
+
       }
     }
 
