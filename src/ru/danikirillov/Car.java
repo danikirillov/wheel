@@ -24,36 +24,25 @@ public class Car {
 
   boolean isAnyWheelFlat() {
     for (int i = 0; i < wheels.length; i++) {
-      if (wheels[i].isFlat()) {
+      if (wheels[i].isFlat() == true) {
         System.out.println("Some wheel is flat!");
         return true;
       }
 
     }
+    System.out.println("All wheels are fine.");
     return false;
   }
 
   private boolean isRadiusCorrect(Wheel wheelForReplacement) {
-    for (int i = 0; i < wheels.length; i++) {
-      if (wheels[0].getRadius() == wheelForReplacement.getRadius()) {
-        System.out.println("Radius is Ok");
-        return true;
-      }
-    }
     {
-      System.out.println("Wrong radius!");
+
       return false;
     }
   }
 
   private void changeWheel(Wheel wheelForReplacement) {
-    for (int i = 0; i < wheels.length; i++) {
-      if (wheels[0] != null) {
-        System.out.println("Wheel changed");
-        break;
-
-      }
-    }
+    //?????? ??? ???
 
   }
 
@@ -64,5 +53,9 @@ public class Car {
   private Wheel getRandomWheel() {
     final var randomIndex = ThreadLocalRandom.current().nextInt(0, wheels.length);
     return wheels[randomIndex];
+  }
+
+  public Wheel[] getWheels() {
+    return wheels;
   }
 }
