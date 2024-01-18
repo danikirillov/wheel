@@ -5,6 +5,7 @@ public class App {
     changeWheelNoErrorsTest();
     changeGoodWheelsNoErrorTest();
     changeWheelWithAnotherRadiusTest();
+    checkWheelForGoodCondition(new Wheel(false,17));
   }
 
   //Unit test prototype
@@ -42,12 +43,11 @@ public class App {
   }
 
   public static int changeWheelWithAnotherRadiusTest() {
-    final var radius = 18;
+    final var radius = 17;
     final var car = CarFactory.createGoodCar(radius);
     final var wheel = new Wheel(false, radius);
-    car.replaceFlatWheel(wheel);
-    car.isAnyWheelFlat();
-    if (radius > 17 && radius < 18) {
+    car.isRadiusCorrect(wheel);
+    if (radius >= 17 && radius < 18) {
       System.out.println("changeWheelWithAnotherRadiusTest - SUCCESS!!! ");
     }
     else {
@@ -55,8 +55,16 @@ public class App {
     }
     return radius;
   }
-  public static Wheel wheelForReplacementGoodCondition(){
-    return new Wheel(false,17);
+
+  public static boolean checkWheelForGoodCondition(Wheel wheelForReplacement) {
+
+    if (wheelForReplacement.isFlat()){
+      System.out.println("WheelForReplacement is flat!");
+      return false;
+    }
+    System.out.println("WheelForReplacement is not flat!");
+      return true;
   }
+
 
 }
