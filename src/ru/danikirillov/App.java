@@ -55,7 +55,7 @@ public class App {
   }
 
 
-  public static boolean checkWheelForGoodCondition(Wheel wheelForReplacement) {
+  public static boolean checkWheelForGoodCondition(Wheel wheelForReplacement) {//todo: no todo
 
     if (wheelForReplacement.isFlat()){
       System.out.println("WheelForReplacement is flat!");
