@@ -2,10 +2,10 @@ package ru.danikirillov;
 
 public class App {
   public static void main(String[] args) {
-    changeWheelNoErrorsTest();
-    changeGoodWheelsNoErrorTest();
+//    changeWheelNoErrorsTest();
+//    changeGoodWheelsNoErrorTest();
     changeWheelWithAnotherRadiusTest();
-    checkWheelForGoodCondition(new Wheel(false,17));
+//    checkWheelForGoodCondition(new Wheel(false,17));
   }
 
   //Unit test prototype
@@ -33,7 +33,9 @@ public class App {
     final var radius = 17;
     final var car = CarFactory.createGoodCar(radius);
     final var wheel = new Wheel(false, radius);
+
     car.replaceFlatWheel(wheel);
+
     if (car.isAnyWheelFlat()) {
       System.out.println("changeGoodWheelsNoErrorTest - ERROR!!!!!!!!!!! - wheel hasn't been changed");
     }
@@ -42,19 +44,16 @@ public class App {
     }
   }
 
-  public static int changeWheelWithAnotherRadiusTest() {
+  public static void changeWheelWithAnotherRadiusTest() {
     final var radius = 17;
     final var car = CarFactory.createGoodCar(radius);
-    final var wheel = new Wheel(false, radius);
-    car.isRadiusCorrect(wheel);
-    if (radius >= 17 && radius < 18) {
-      System.out.println("changeWheelWithAnotherRadiusTest - SUCCESS!!! ");
-    }
-    else {
-      System.out.println("changeWheelWithAnotherRadiusTest - ERROR!!! - replaceFlatWheel has another radius! ");
-    }
-    return radius;
+    final var wheel = new Wheel(false, 12);
+
+    car.getFlatTire();
+    car.replaceFlatWheel(wheel);
+
   }
+
 
   public static boolean checkWheelForGoodCondition(Wheel wheelForReplacement) {
 

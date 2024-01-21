@@ -38,9 +38,7 @@ public class Car {
       System.out.println("Radius is correct.");
       return true;
     }
-    {
       return false;
-    }
   }
 
   public boolean changeWheel(Wheel wheelForReplacement) {
